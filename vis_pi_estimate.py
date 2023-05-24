@@ -11,10 +11,12 @@ import matplotlib.pyplot as plt
 num_samples = list(range(5000,50001,5000)) # จำนวนตัวอย่าง
 r = 5.0 # รัศมีวงกลมหรือครึ่งหนึ่งของความยาวด้านของสี่เหลี่ยมจัตุรัส
 a, b = -r, r # ช่วง [a, b] คือ [-r, r]
+
 for exp, num_sample in enumerate(num_samples):
     in_circle = 0
     fig, ax = plt.subplots()
     ax.add_patch(plt.Circle((0, 0), r, color='g'))
+
     for i in range(num_sample): # สุ่มไปเรื่อยๆ
         x = random.uniform(a, b)
         y = random.uniform(a, b)
