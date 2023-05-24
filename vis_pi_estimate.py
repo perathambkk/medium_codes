@@ -18,6 +18,7 @@ ax.add_patch(plt.Circle((0, 0), r, color='g'))
 ax.set_xlim([-r, r])
 ax.set_ylim([-r, r])
 exp = 0
+
 for i in range(num_samples): # สุ่มไปเรื่อยๆ
     x = random.uniform(a, b)
     y = random.uniform(a, b)
