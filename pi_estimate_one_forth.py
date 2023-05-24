@@ -6,7 +6,7 @@ import random
 import math
 num_samples = 100000 # จำนวนตัวอย่าง
 r = 5.0 # รัศมีวงกลมหรือครึ่งหนึ่งของความยาวด้านของสี่เหลี่ยมจัตุรัส
-a, b = 0, r # ช่วง [a, b] คือ [-r, r]
+a, b = 0, r # ช่วง [a, b] คือ [0, r]
 in_circle = 0
 for i in range(num_samples): # สุ่มไปเรื่อยๆ
     x = random.uniform(a, b)
