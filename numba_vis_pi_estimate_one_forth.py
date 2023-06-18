@@ -6,7 +6,9 @@ import random
 import math
 import os 
 
+import numba
 from numba import jit
+from numba import njit
 
 import matplotlib.pyplot as plt
 
@@ -14,7 +16,6 @@ num_samples = 50001 # จำนวนตัวอย่าง
 r = 5.0 # รัศมีวงกลมหรือครึ่งหนึ่งของความยาวด้านของสี่เหลี่ยมจัตุรัส
 a, b = 0, r # ช่วง [a, b] คือ [0, r]
 
-@jit
 def monte_carlo(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
     exp = 0
     in_circle = 0
@@ -44,5 +45,6 @@ def monte_carlo(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
             # plt.close()
             exp += 1
 
-monte_carlo()
+monte_carlo_njit = njit(monte_carlo)
+monte_carlo_njit()
 os.system('ffmpeg -framerate 10 -i \%d.jpg -loop 0 pi_animation.gif')
