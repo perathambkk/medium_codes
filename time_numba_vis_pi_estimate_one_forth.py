@@ -16,7 +16,7 @@ r = 5.0 # รัศมีวงกลมหรือครึ่งหนึ่�
 a, b = 0, r # ช่วง [a, b] คือ [0, r]
 
 @jit
-def monto_carlo(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
+def monte_carlo(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
     exp = 0
     in_circle = 0
 
@@ -45,7 +45,7 @@ def monto_carlo(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
             # plt.close()
             exp += 1
 
-def monto_carlo_np(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
+def monte_carlo_np(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
     exp = 0
     in_circle = 0
 
@@ -73,13 +73,13 @@ def monto_carlo_np(num_samples = 50001, r = 5.0, a = 0, b = 5.0):
             # plt.waitforbuttonpress(0) # รอๆๆๆๆ พิมพ์หรือคลิ๊ก
             # plt.close()
             exp += 1
-start = time.perf_counter()
-monto_carlo_np()
-end = time.perf_counter()
-print("Elapsed (numpy) = {}s".format((end - start)))
+# start = time.perf_counter()
+# monto_carlo_np()
+# end = time.perf_counter()
+# print("Elapsed (numpy) = {}s".format((end - start)))
 
 start = time.perf_counter()
-monto_carlo()
+monte_carlo()
 end = time.perf_counter()
 print("Elapsed (numba) = {}s".format((end - start)))
 
